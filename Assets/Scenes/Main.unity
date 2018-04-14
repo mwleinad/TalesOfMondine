@@ -124,6 +124,7 @@ GameObject:
   - component: {fileID: 54855963}
   - component: {fileID: 54855964}
   - component: {fileID: 54855965}
+  - component: {fileID: 54855966}
   m_Layer: 0
   m_Name: weapon_1
   m_TagString: Untagged
@@ -137,7 +138,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 54855961}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.06312, y: 0.04715, z: 0}
   m_LocalScale: {x: 0.54687506, y: 0.6570231, z: 1}
   m_Children: []
@@ -213,8 +214,8 @@ MonoBehaviour:
     maxDepth: 0
     minNormalAngle: 0
     maxNormalAngle: 0
-  DamagePoint: 1
-  PushForce: 2
+  DamagePoint: 0
+  PushForce: 4
   WeaponLevel: 1
 --- !u!61 &54855965
 BoxCollider2D:
@@ -241,6 +242,23 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.1, y: 0.24392706}
   m_EdgeRadius: 0
+--- !u!95 &54855966
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 54855961}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 75467c4e826da4b48915a3bfc65ab8c4, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &151258059
 GameObject:
   m_ObjectHideFlags: 0
@@ -1577,6 +1595,7 @@ GameObject:
   - component: {fileID: 320251419}
   - component: {fileID: 320251421}
   - component: {fileID: 320251420}
+  - component: {fileID: 320251422}
   m_Layer: 9
   m_Name: HitBox
   m_TagString: Untagged
@@ -1666,6 +1685,33 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
+--- !u!114 &320251422
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 320251418}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4989bbca0898b7d41bada73cb2822090, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  filter:
+    useTriggers: 0
+    useLayerMask: 0
+    useDepth: 0
+    useOutsideDepth: 0
+    useNormalAngle: 0
+    useOutsideNormalAngle: 0
+    layerMask:
+      serializedVersion: 2
+      m_Bits: 0
+    minDepth: 0
+    maxDepth: 0
+    minNormalAngle: 0
+    maxNormalAngle: 0
+  DamagePoint: 1
+  PushForce: 3
 --- !u!1 &439378357
 GameObject:
   m_ObjectHideFlags: 0
@@ -1942,7 +1988,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HitPoint: 0
   MaxHitPoint: 0
-  pushRecoverySpeed: 0.2
+  PushRecoverySpeed: 0.2
 --- !u!212 &775863603
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -9428,7 +9474,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HitPoint: 10
   MaxHitPoint: 10
-  pushRecoverySpeed: 0.2
+  PushRecoverySpeed: 0.2
   XpValue: 1
   TriggerLength: 0.5
   ChaseLength: 1

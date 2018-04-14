@@ -22,7 +22,12 @@ public abstract class Mover : Fighter {
     protected virtual void UpdateMotor(Vector3 input, float XSpeed, float YSpeed) {
         MoveDelta = new Vector3(input.x * XSpeed, input.y * YSpeed, 0);
         SwapSpriteDirection();
+
+        //Add push vector, if any
+        MoveDelta += PushDirection;
         Move();
+        //Reduce push force every frame, bases off recovery speed
+        PushDirection = Vector3.Lerp(PushDirection, Vector3.zero, PushRecoverySpeed);
     }
 
     private void SwapSpriteDirection() {

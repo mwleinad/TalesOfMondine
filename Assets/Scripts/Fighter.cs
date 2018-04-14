@@ -7,7 +7,7 @@ using UnityEngine;
 public class Fighter : MonoBehaviour {
     public int HitPoint = 10;
     public int MaxHitPoint = 10;
-    public float pushRecoverySpeed = 0.2f;
+    public float PushRecoverySpeed = 0.2f;
 
     //inmunity
     protected float ImmuneTime = 1.0f;
